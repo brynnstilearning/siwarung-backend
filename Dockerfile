@@ -6,7 +6,7 @@ RUN apt-get update && apt-get install -y \
     libzip-dev libxml2-dev libonig-dev \
     libcurl4-openssl-dev \
     && docker-php-ext-configure gd --with-freetype --with-jpeg \
-    && docker-php-ext-install pdo pdo_mysql mbstring xml curl zip gd bcmath tokenizer \
+    && docker-php-ext-install pdo pdo_mysql mbstring xml curl zip gd bcmath \
     && apt-get clean && rm -rf /var/lib/apt/lists/*
 
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
